@@ -1,14 +1,14 @@
 {
   "name": "pdb-modal",
-  "description": "Two test React components",
+  "description": "modal component",
   "author": "Pascal Debailleul",
   "keywords": [
     "react",
     "components",
     "ui"
   ],
-  "repository": {    "type": "git",    "url": "URL_OF_YOUR_REPOSITORY"  }
-  "version": "0.1.1",
+  "repository": {    "type": "git",    "url": "https://github.com/FOXEST57/lib-jquery-react.git"  },
+  "version": "0.1.2",
   "private": false,
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -20,9 +20,6 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -56,6 +53,9 @@
     "@babel/preset-env": "^7.19.1",
     "cross-env": "^7.0.3",
     "install": "^0.13.0",
-    "npm": "^8.19.2"
+    "npm": "^8.19.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1"
   }
 }
