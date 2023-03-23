@@ -20,6 +20,7 @@ const ModalContent = () => {
     )
 }
 function App() {
+    // Customisation du style en objet
     const myModalStyle = {
         background: "blue"
     }
@@ -41,12 +42,14 @@ function App() {
         border: "2px solid black",
         cursor: "pointer"
     }
-
+    // Ajout du hook state pour l'ouverture et la fermeture du modal lors du clique sur le bouton
     const [isOpen, setIsOpen] = useState(false)
 
     return (
         <div className="App">
+            {/* Quand on clique sur le bouton on appele le state qui va changer la valeur false en true pour ouvrir le modal */}
             <button onClick={() => setIsOpen(true)}>Open modal</button>
+            {/* Modal component avec 5 props, style, est ouvert, son titre et son contenu */}
             <Modal
                 myModalButtonStyle={myModalButtonStyle}
                 isOpen={isOpen}

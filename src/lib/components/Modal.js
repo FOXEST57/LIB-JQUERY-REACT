@@ -1,7 +1,19 @@
 import React, { useEffect, useState } from 'react'
 
-const Modal = ({ myModalStyle, myOverlayStyle, myModalButtonStyle, isOpen, setIsOpen,modalTitle, modalContent, children }) => {
-
+// Composant Modal avec
+/**
+ * Composant Modal
+ * Props myModalStyle: style du modal en objet
+ * Props myOverlayStyle: style de l'overlay modal en objet
+ * Props myModalButtonStyle: style button du modal en objet 
+ * Props isOpen: state boolean pour l'ouverture du modal
+ * Props setIsOpen: setState pour modifier l'état du state open 
+ * Props modalTitle: titre du modal  
+ * Props modalContent: contenu du modal 
+ * Props children: d'autre contenu html
+ */
+const Modal = ({ myModalStyle, myOverlayStyle, myModalButtonStyle, isOpen, setIsOpen, modalTitle, modalContent, children }) => {
+    // style définie par default si aucun style n'est donnée en props
     const defaultOverlayStyle = {
         background: "rgba(0,0,0,0.8)",
         position: "absolute",
@@ -33,12 +45,16 @@ const Modal = ({ myModalStyle, myOverlayStyle, myModalButtonStyle, isOpen, setIs
         border: "none",
         cursor: "pointer"
     }
-
+    // state overlay style 
     const [overlayStyle, setOverlayStyle] = useState({ ...defaultOverlayStyle })
+     // state global modal style 
     const [modalStyle, setModalStyle] = useState({ ...defaultModalStyle })
+    // state button  modal style
     const [modalButtonStyle, setModalButtonStyle] = useState({ ...defaultModalButtonStyle })
 
-
+    // use effect pour initialise lorsque le composant se créer
+    // on va initialise les states en fonction des props recu, si les props modalStylen overlayStyle, buttonStyle sont définie
+    // nos states seront inialisé avec sinon on prendra le style par default définie au dessus
     useEffect(() => {
         myModalStyle
             ? setModalStyle(() => { return { ...myModalStyle } })
@@ -53,11 +69,13 @@ const Modal = ({ myModalStyle, myOverlayStyle, myModalButtonStyle, isOpen, setIs
 
 
     }, [myModalStyle, myOverlayStyle, myModalButtonStyle])
-
+    // function constante pour ferme le modal
     const handleSetIsOpen = () => {
         setIsOpen(false)
     }
 
+    // si notre modal est ouvert on affiche la div du modal sinon nous n'affichons rien
+    // avec le onClick lors du clique sur le boutton X le modal se fermera
     return (
         <>
             {isOpen &&
