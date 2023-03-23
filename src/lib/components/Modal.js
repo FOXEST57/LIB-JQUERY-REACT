@@ -52,8 +52,8 @@ const Modal = ({ myModalStyle, myOverlayStyle, myModalButtonStyle, isOpen, setIs
     // state button  modal style
     const [modalButtonStyle, setModalButtonStyle] = useState({ ...defaultModalButtonStyle })
 
-    // use effect pour initialise lorsque le composant se créer
-    // on va initialise les states en fonction des props recu, si les props modalStylen overlayStyle, buttonStyle sont définie
+    // use effect pour initialiser lorsque le composant se crée
+    // on va initialiser les states en fonction des props recu, si les props modalStylen overlayStyle, buttonStyle sont définie
     // nos states seront inialisé avec sinon on prendra le style par default définie au dessus
     useEffect(() => {
         myModalStyle
